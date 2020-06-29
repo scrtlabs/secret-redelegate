@@ -10,7 +10,7 @@ Use at your own risk. This has NOT been thoroughly tested beyond a single OSX ma
 ## Requirements
 
 1. `secretcli` connected to a local or remote node
-2. `python3' assumed to be found at /usr/bin/python3. Change the first line of `redelegate.py` otherwise.
+2. `python3` assumed to be found at `/usr/bin/python3`. Change the first line of `redelegate.py` otherwise.
 
 ## Installation
 
