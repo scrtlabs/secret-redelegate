@@ -1,0 +1,9 @@
+{
+	"validators_list": [
+		"<validator_address>",
+	],
+	"account": {
+		"id": "<local account name stored in the CLI>",
+		"address": "<public address of the same account>"
+	}
+}
