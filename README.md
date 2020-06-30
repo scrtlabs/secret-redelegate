@@ -15,11 +15,15 @@ Use at your own risk. This has NOT been thoroughly tested beyond a single OSX ma
 ## Installation
 
 Clone this repo:
-`git clone https://github.com/enigmampc/secret-redelegate.git`
+```bash
+git clone https://github.com/enigmampc/secret-redelegate.git
+```
 
 Make `redelegate.py` an executable:
 
-`chmod +x redelegate.py`
+```bash
+chmod +x redelegate.py
+```
 
 ## Usage
 
@@ -27,19 +31,25 @@ Make `redelegate.py` an executable:
 
 If you haven't done so already, you should add your Ledger wallet as a local account. If this has already been done, skip to the next step. `<account id>` refers to the local name the CLI client will use to refer to your account, whereas `<account number on your Ledger>` is the index of the address you want to choose (use `0` if you're not sure).
 
-`secretcli keys add <account id> --ledger --account <account number on your Ledger> --recover`
+```bash
+secretcli keys add <account id> --ledger --account <account number on your Ledger> --recover
+```
 
 ### Obtain your account address
 
 To get your account address, copy the value under "address", given by the output of the following command:
 
-`secretcli keys show <account id>`
+```bash
+secretcli keys show <account id>
+```
 
 ### Create config.json file
 
 First, create a copy of `sample_config.json` as `config.json`:
 
-`cp sample_config.json config.json`
+```bash
+cp sample_config.json config.json
+```
 
 Now, open `config.json` with your favorite text editor, and update account.id and account.address fields to reflect the information obtained above.
 
@@ -52,17 +62,21 @@ With `config.json` set up, all that's left is running the script. The script acc
 - `<filename>`: if you followed the tutorial to this point, you should use `config.json` here.
 - OPTIONAL `<amount of scrt>`: if NOT used, then only the rewards available would be re-delegated. If used, then this overrides and uses this as the amount of SCRT to delegate.
 
-NOTE: rewards are split equally between the validators set in the configuration file.
+**NOTE:** rewards are split equally between the validators set in the configuration file.
 
 ## Examples
 
 - To delegate 1000 SCRT for the first time with a `config.json` file set up as above, use:
 
-`./redelegate.py config.json 1000`
+```bash
+./redelegate.py config.json 1000
+```
 
 - To withdraw and re-delegate available rewards only, use:
 
-`./redelegate.py config.json`
+```bash
+./redelegate.py config.json
+```
 
 
 ## Using with other Cosmos chains
